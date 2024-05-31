@@ -22,7 +22,7 @@ public:
     this->get_parameter("device", device_);
     this->get_parameter("topic", topic_);
 	
-	RCLCPP_INFO(this->get_logger(), "device : %s",device_.c_str());
+	  RCLCPP_INFO(this->get_logger(), "device : %s",device_.c_str());
     RCLCPP_INFO(this->get_logger(), "topic : %s",topic_.c_str());
 
     // 시리얼 포트 초기화
@@ -84,7 +84,7 @@ private:
 
         auto message = sensor_msgs::msg::Range();
         message.header.stamp = this->now();
-        message.header.frame_id = "front_left";
+        message.header.frame_id = topic_;
         message.radiation_type = sensor_msgs::msg::Range::ULTRASOUND;
         message.field_of_view = 0.1; // 10 degrees
         message.min_range = 0.2;    // 20 cm
