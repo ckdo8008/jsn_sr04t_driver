@@ -73,7 +73,7 @@ private:
 
       uint16_t distance = (high_byte << 8) | low_byte;
 
-      if (checksum == ((high_byte + low_byte + start_byte_) & 0xFF))
+      if (checksum == ((high_byte + low_byte) & 0xFF))
       {
         if (distance == 0) {
           // RCLCPP_WARN(this->get_logger(), "Fail Range Data : %d %d", high_byte, low_byte);
